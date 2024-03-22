@@ -50,3 +50,14 @@ sd(years_of_experience)
 round(sd(years_of_experience))
 print(round(sd(years_of_experience)))
 ```
+
+
+```{r exercise5}
+# Find out what arguments are needed: 
+args(sample)
+args(median)
+
+median(years_of_experience, na.rm = TRUE)
+median(salary)
+median(salary, na.rm = TRUE)
+```
