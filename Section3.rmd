@@ -29,7 +29,7 @@ employees <- c(employee_name, salary)
 typeof(employees)
 ```
 
-```{r}
+```{r execise3}
 yearly_bonus <- c(T,T,T,F,T,T,T,T,T,T)
 employees <- c(employees, yearly_bonus)
 employees
@@ -38,4 +38,15 @@ typeof(employees)
 coerce.check <- c(salary, yearly_bonus)
 
 coerce.check
+```
+
+```{r exercise4}
+years_of_experience <- c(8, 10, 10, 1, 10, 10, 8, 12, 1, 12)
+sum(years_of_experience)
+mean(years_of_experience)
+median(years_of_experience)
+length(years_of_experience)
+sd(years_of_experience)
+round(sd(years_of_experience))
+print(round(sd(years_of_experience)))
 ```
