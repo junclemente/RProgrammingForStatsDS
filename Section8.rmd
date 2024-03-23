@@ -1,7 +1,7 @@
 ---
-title: 'Section 8 '
-author: 'JC'
-date: '`r Sys.Date()`'
+title: "Section 8 "
+author: "JC"
+date: "`r Sys.Date()`"
 output:
   pagedown::html_paged:
     self_contained: false
@@ -14,12 +14,15 @@ knitr::opts_chunk$set(
   message = FALSE,
   warning=FALSE
 )
-```
-
-```{r}
 options(
   max.print=100,
   vsc.use_httpgd=TRUE,
   device='quartz'
 )
+```
+
+```{r}
+library(tidyverse)
+star <- starwars
+star
 ```
