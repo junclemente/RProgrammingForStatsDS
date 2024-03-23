@@ -1,0 +1,39 @@
+---
+title: "Section 9"
+output: html_document
+---
+
+```{r}
+knitr::opts_chunk$set(echo = TRUE)
+``` 
+
+```{r}
+hdi <- read.csv("./datasets/hdi-cpi.csv", stringsAsFactors = FALSE)
+hdi
+
+sc <- ggplot(hdi)
+sc
+sc <- ggplot(hdi, aes(CPI.2015, HDI.2015))
+sc
+
+# geometry layer
+sc + geom_point()
+
+# facets layer & statistics layer
+# sc + geom_point(aes(color = Region), size = 3) + facet_grid(Region ~.) + stat_smooth()
+
+# coordinate layer
+# sc + geom_point(aes(color = Region), size = 3) + facet_grid(Region ~.) + stat_smooth() + coord_cartesian(xlim = c(0.75, 1))
+
+# theme
+sc + geom_point(aes(color = Region), size = 3) + facet_grid(Region ~.) + stat_smooth() + theme_minimal()
+
+# 7 layers of a graph
+# data
+# aesthetics
+# geometry
+# facets
+# statistics
+# coordinates
+# themes
+``` 

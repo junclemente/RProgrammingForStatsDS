@@ -1,28 +1,60 @@
 ---
 title: "Section 8 "
-author: "JC"
-date: "`r Sys.Date()`"
-output:
-  pagedown::html_paged:
-    self_contained: false
-    toc: false
+output: html_document
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(
-  echo = FALSE,
-  message = FALSE,
-  warning=FALSE
-)
-options(
-  max.print=100,
-  vsc.use_httpgd=TRUE,
-  device='quartz'
-)
+```{r}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(tidyverse)
+star <- starwars
+head(star,1)
 ```
 
 ```{r}
-library(tidyverse)
-star <- starwars
-star
+library(tibble)
+library(dplyr)
+employee.data <- read.csv("./datasets/employee_data.csv", skip = 23, 
+                           header = TRUE)
+head(employee.data, 2)
+
+# convert to tibble
+employee.data <- as_tibble(employee.data)
+
+# convert gender and title var to factors
+employee.data$gender <- as.factor(employee.data$gender)
+employee.data$title <- as.factor(employee.data$title)
+
+# check for missing values. FALSE means no missing data
+any(is.na(employee.data))
+``` 
+
+```{r}
+# create df of high earning employees using pipes %>%
+employee.a <- employee.data %>%
+    select(ends_with("name"), gender, everything()) %>% 
+    filter(salary >= 70000) %>% 
+    arrange(gender, last_name)
+
+employee.a
+
+# save to good earners dataframe
+good.earners <- employee.a["emp_no"]
+good.earners
 ```
+
+```{r}
+# Earnings by job pos and gender. groupby job title and gender
+# For each, calc avg monthly salary
+employee.b <- employee.data %>% 
+    group_by(title, gender) %>% 
+    summarise(avg.salary = mean(salary)) %>%
+    mutate(monthly = avg.salary/12) %>% 
+    arrange(gender, desc(monthly))
+
+employee.b
+``` 
+```{r}
+
+
+``` 
