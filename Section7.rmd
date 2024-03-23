@@ -3,7 +3,7 @@ title: "Section 6"
 output: html_document
 ---
 
-```{r setup, include = FALSE}
+```{r setup include = FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 
 ```
@@ -20,4 +20,26 @@ name <- c("VolkswagenTouareg", "CitroenC3", "AudiA3", "ToyotaYaris",
 df = data.frame(row.names = names, "Year" = year, "Size" = size, "MPG" = mpg,
                 "Geerbox" = geerbox)
 df
+```
+
+```{r}
+working.dir <- getwd()
+
+setwd <- working.dir
+```
+```{r importTable}
+my.pok <- read.table("./datasets/pokRdex_comma.csv",
+                      sep = ',', 
+                      header = TRUE, 
+                      stringsAsFactors = FALSE)
+                    
+# my.pok 
+```
+
+```{r}
+df_employees <- read.csv("./datasets/employee_data.csv",
+                          skip = 23,
+                          nrows = 200,
+                          stringsAsFactors = FALSE)
+head(df_employees, 5)
 ```
