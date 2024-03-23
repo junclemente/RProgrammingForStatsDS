@@ -1,0 +1,23 @@
+---
+title: "Section 6"
+output: html_document
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+```
+
+```{r}
+year <- c(2, 3, 4, 5, 8, 9, 8)
+size <- c("medium", "small", "medium", "small", "small", "medium",
+          "extra large")
+mpg <- c(25, 47, 27, 36, 31, 2, 36)
+geerbox <- c("manual", "manual", "auto", "auto", "manual", "manual", "auto")
+name <- c("VolkswagenTouareg", "CitroenC3", "AudiA3", "ToyotaYaris",
+           "KiaForte", "DaciaLogan", "NisanPajero")
+
+df = data.frame(row.names = names, "Year" = year, "Size" = size, "MPG" = mpg,
+                "Geerbox" = geerbox)
+df
+```

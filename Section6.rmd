@@ -1,0 +1,44 @@
+---
+title: "Section 6"
+output: html_document
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+```
+
+```{r exercise1}
+# if - else average...
+input <- 50
+if (input >= 75 && input <= 100) {
+  print("Excellent")
+} else if (input >= 60 && input < 70) {
+  print("Above Average")
+} else if (input >= 1 && input < 60) {
+  print("Average")
+} else {
+  print("Please input a number between 1 and 100")
+}
+```
+
+```{r for-loops}
+n <- 20
+my_sum <- 0
+for (i in 1:n) {
+  my_sum <- my_sum + i
+  print(my_sum)
+}
+print(my_sum)
+```
+
+```{r while-loops}
+n <- 20
+sum <- 0
+i <- 1
+while (i < 20) {
+  sum <- sum + n
+  print(sum)
+  i <- i + 1
+}
+```

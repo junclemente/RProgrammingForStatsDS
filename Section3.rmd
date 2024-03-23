@@ -17,9 +17,10 @@ print(answer)
 ```
 
 ```{r exercise2}
-employee_name <- c("Belinda Johnes", "Maria Delar", "Math Smith", 
-    "Matt Williams", "Robert Mathews", "Julia Walters", "Andrea Cheng",
-    "July Horitz", "Danielle Muller", "Esteban Lugo")
+employee_name <- c("Belinda Johnes", "Maria Delar", "Math Smith",
+                   "Matt Williams", "Robert Mathews", "Julia Walters",
+                   "Andrea Cheng", "July Horitz", "Danielle Muller",
+                   "Esteban Lugo")
 typeof(employee_name)
 
 salary <- c(3000, NA, NA, NA, NA, 4000, 3000, 5000, 1000, 5000)
@@ -30,7 +31,7 @@ typeof(employees)
 ```
 
 ```{r execise3}
-yearly_bonus <- c(T,T,T,F,T,T,T,T,T,T)
+yearly_bonus <- c(TRUE, TRUE, TRUE, FALSE, TRUE, TRUE, TRUE, TRUE, TRUE, TRUE)
 employees <- c(employees, yearly_bonus)
 employees
 typeof(employees)
@@ -53,7 +54,7 @@ print(round(sd(years_of_experience)))
 
 
 ```{r exercise5}
-# Find out what arguments are needed: 
+# Find out what arguments are needed:
 args(sample)
 args(median)
 
@@ -65,9 +66,9 @@ median(salary, na.rm = TRUE)
 ```{r exercise6}
 # write a function that flips coin 100 times
 flip <- function() {
-    coin <- c("heads", "tails")
-    toss <- sample(coin, 100, replace = TRUE, prob = c(0.3, 0.7))
-    return(toss)
+  coin <- c("heads", "tails")
+  toss <- sample(coin, 100, replace = TRUE, prob = c(0.3, 0.7))
+  return(toss)
 }
 
 flip()
