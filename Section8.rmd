@@ -1,0 +1,25 @@
+---
+title: 'Section 8 '
+author: 'JC'
+date: '`r Sys.Date()`'
+output:
+  pagedown::html_paged:
+    self_contained: false
+    toc: false
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  echo = FALSE,
+  message = FALSE,
+  warning=FALSE
+)
+```
+
+```{r}
+options(
+  max.print=100,
+  vsc.use_httpgd=TRUE,
+  device='quartz'
+)
+```
