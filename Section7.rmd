@@ -1,5 +1,5 @@
 ---
-title: "Section 6"
+title: "Section 7"
 output: html_document
 ---
 
@@ -17,9 +17,9 @@ geerbox <- c("manual", "manual", "auto", "auto", "manual", "manual", "auto")
 name <- c("VolkswagenTouareg", "CitroenC3", "AudiA3", "ToyotaYaris",
            "KiaForte", "DaciaLogan", "NisanPajero")
 
-df = data.frame(row.names = names, "Year" = year, "Size" = size, "MPG" = mpg,
-                "Geerbox" = geerbox)
-df
+df_cars <- data.frame(row.names = name, "Year" = year, "Size" = size,
+                     "MPG" = mpg, "Geerbox" = geerbox)
+df_cars
 ```
 
 ```{r}
@@ -36,10 +36,31 @@ my.pok <- read.table("./datasets/pokRdex_comma.csv",
 # my.pok 
 ```
 
-```{r}
+```{r exercise17}
+# Read csv file
 df_employees <- read.csv("./datasets/employee_data.csv",
                           skip = 23,
                           nrows = 200,
                           stringsAsFactors = FALSE)
+# head(df_employees, 5)
+
+# Rename variables
+names(df_employees) <- c("Employee number", "First name",
+                        "Last name", "Birth date", 
+                        "Gender", "Job title", "Salary",
+                        "From date", "To date")
+
 head(df_employees, 5)
+
+write.csv(df_employees, file = "./datasets/employee_exercise.csv",
+          row.names = FALSE)
+```
+
+```{r}
+df_cars[["PassdAnualInspection"]]
+df_cars
+```
+
+```{r}
+library('ggplot2')
 ```
