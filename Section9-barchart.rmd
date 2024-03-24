@@ -1,0 +1,51 @@
+---
+title: 'Section 9 - Bar Charts'
+author: 'Jun C'
+date: '`r Sys.Date()`'
+output:
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  echo = FALSE,
+  message = FALSE,
+  warning=FALSE
+)
+```
+
+```{r}
+library(tidyverse)
+library(ggthemes)
+```
+
+```{r}
+bar <- ggplot(df, aes(x = Sex, fill = Survived))
+bar + geom_bar() + theme_light() + labs(y = "Passenger Count", title = "Survival Rate on the Titanic") +
+facet_wrap(Sex ~ Pclass)
+
+```
+
+```{r}
+emp <- read.csv("./datasets/employee_data.csv", skip = 23, stringsAsFactors = FALSE)
+
+head(emp, 2)
+
+bar <- ggplot(emp, aes(title, fill = gender))
+bar + geom_bar() + theme_fivethirtyeight() + labs(title = "Job positions by gender", x = "Job position", y = "Employee count")
+# scale_fill_manual(values = c("chartreuse4", "darkorange"))
+
+```
+
+```{r}
+bar_classic <- ggplot(emp, aes(gender, fill = title))
+bar_classic + geom_bar() + theme_classic() + scale_fill_manual(values = c("chartreuse4", "darkorange")) + 
+labs(title = "Job Positions by Gender", y = "Employee count", x = "Job position")
+```
+
+```{r}
+bar_crowded <- ggplot(emp, aes(gender, fill = title))
+bar_crowded + geom_bar() + theme_fivethirtyeight() + 
+scale_fill_manual(values = c("magenta", "darkorange", "midnightblue", 
+"springgreen4", "brown1", "gold")) +
+labs(title = "Job Posistions by Gender")
+```
